@@ -1,5 +1,6 @@
 class Solution {
 public:
+//striver
     void moveZeroes(vector<int>& nums) {
         int j=-1;
         int n= nums.size();
