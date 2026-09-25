@@ -39,15 +39,27 @@ public:
 
         //two pointer
         // t.c O(n+no of nodes before intersection)
-        ListNode *p=headA;
-        ListNode *q=headB;
-        while(p!=q){
-            if(p==NULL) p=headB;
-            else p = p->next;
-            if(q==NULL) q= headA;
-            else q = q->next;
+        // ListNode *p=headA;
+        // ListNode *q=headB;
+        // while(p!=q){
+        //     if(p==NULL) p=headB;
+        //     else p = p->next;
+        //     if(q==NULL) q= headA;
+        //     else q = q->next;
+        // }
+        // return p;
+
+        //optimal
+
+        ListNode* p = headA;
+        ListNode* q = headB;
+
+        while (p != q) {
+            p = (p != nullptr) ? p->next : headB;
+            q = (q != nullptr) ? q->next : headA;
         }
-        return p;
+
+        return p; 
 
 
 
