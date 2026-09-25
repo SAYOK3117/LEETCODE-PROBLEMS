@@ -24,18 +24,30 @@ public:
 
 
         //set ds 
-        unordered_set<ListNode*> seen;
-        ListNode *p = headA;
-        while(p){
-                seen.insert(p);
-            p = p->next;
+        // unordered_set<ListNode*> seen;
+        // ListNode *p = headA;
+        // while(p){
+        //         seen.insert(p);
+        //     p = p->next;
+        // }
+        // p = headB;
+        // while (p) {
+        //     if (seen.count(p)) return p;
+        //     p = p->next;
+        // }
+        // return NULL;
+
+        //two pointer
+        // t.c O(n+no of nodes before intersection)
+        ListNode *p=headA;
+        ListNode *q=headB;
+        while(p!=q){
+            if(p==NULL) p=headB;
+            else p = p->next;
+            if(q==NULL) q= headA;
+            else q = q->next;
         }
-        p = headB;
-        while (p) {
-            if (seen.count(p)) return p;
-            p = p->next;
-        }
-        return NULL;
+        return p;
 
 
 
