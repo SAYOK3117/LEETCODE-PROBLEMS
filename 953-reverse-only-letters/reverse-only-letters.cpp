@@ -6,9 +6,9 @@ public:
         while(i<j){
             while(i<n && !((s[i]>='a' && s[i]<='z') || s[i]>='A' && s[i]<='Z')) i++;
             while(j>=0 && !((s[j]>='a' && s[j]<='z') || s[j]>='A' && s[j]<='Z')) j--;
-            if(i<j) swap(s[i],s[j]);
-            i++;
-            j--;
+            if(i<j) swap(s[i++],s[j--]);
+            // i++;
+            // j--;
         }
         return s;
     }
