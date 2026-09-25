@@ -51,15 +51,24 @@ public:
 
         //optimal
 
-        ListNode* p = headA;
-        ListNode* q = headB;
+        // ListNode* p = headA;
+        // ListNode* q = headB;
+
+        // while (p != q) {
+        //     p = (p != nullptr) ? p->next : headB;
+        //     q = (q != nullptr) ? q->next : headA;
+        // }
+
+        // return p; 
+        ListNode *p = headA;
+        ListNode *q = headB;
 
         while (p != q) {
-            p = (p != nullptr) ? p->next : headB;
-            q = (q != nullptr) ? q->next : headA;
+            p = (p == nullptr) ? headB : p->next;
+            q = (q == nullptr) ? headA : q->next;
         }
 
-        return p; 
+        return p;
 
 
 
